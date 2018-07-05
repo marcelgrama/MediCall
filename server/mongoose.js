@@ -5,10 +5,14 @@ import config from '../config/server';
 import logger from '../services/serverLogger';
 
 const connect = () =>
-  mongoose.connect(config.dbURL, {
-    reconnectTries: Number.MAX_VALUE,
-    poolSize: 10
-  });
+  mongoose.connect(
+    config.dbURL,
+    {
+      useNewUrlParser: true,
+      reconnectTries: Number.MAX_VALUE,
+      poolSize: 10
+    }
+  );
 
 mongoose.plugin(crudPlugin);
 

@@ -3,8 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=7.6.0",
+    "npm": ">=4"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon --no-update-notifier ./index.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix --ext .js pages"
@@ -12,11 +23,33 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@atlaskit/button": "^8.2.4",
-    "next": "^6.1.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "styled-components": "^3.3.3"
+    "axios": "^0.18.0",
+    "babel-plugin-styled-components": "^1.5.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "constant-case": "^2.0.0",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "joi": "^13.1.2",
+    "jsonwebtoken": "^8.2.1",
+    "lodash": "^4.17.5",
+    "moment": "^2.22.0",
+    "mongoose": "^5.0.13",
+    "next": "5.0.0",
+    "prop-types": "^15.6.1",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-no-ssr": "^1.1.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.3.0",
+    "redux-api-middleware": "^2.3.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^3.2.3",
+    "winston": "^2.4.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
