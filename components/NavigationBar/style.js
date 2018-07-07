@@ -1,4 +1,5 @@
-import List, { ListItem } from '@material-ui/core/List';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import theme from '../Page/theme';
