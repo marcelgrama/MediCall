@@ -113,7 +113,7 @@ const SignIn = class extends React.Component {
                 color="primary"
                 fullWidth
               >
-                Sign In
+                SignIn
               </Button>
             </Grid>
             {this.state.error ? (
