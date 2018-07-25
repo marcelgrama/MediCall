@@ -1,6 +1,6 @@
 import JssProvider from 'react-jss/lib/JssProvider';
 import { create } from 'jss';
-import { createGenerateClassName, jssPreset } from '@material-ui/core/styles';
+import { createGenerateClassName, jssPreset } from 'material-ui/styles';
 import { PropTypes } from 'prop-types';
 
 const generateClassName = createGenerateClassName();

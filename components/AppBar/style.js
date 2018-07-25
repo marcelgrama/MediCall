@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Toolbar from '@material-ui/core/Toolbar';
-import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/icons/RadioButtonChecked';
+import Toolbar from 'material-ui/Toolbar';
+import Grid from 'material-ui/Grid';
+import IconButton from 'material-ui/IconButton';
 import theme from '../Page/theme';
 
 export const StyledToolbar = styled(Toolbar)`

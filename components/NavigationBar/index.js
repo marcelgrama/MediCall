@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
+import Grid from 'material-ui/Grid';
 import { connect } from 'react-redux';
-import Typography from '@material-ui/core/Typography';
-import Slide from '@material-ui/core/Slide';
-import IconButton from '@material-ui/core/IconButton';
-import ClearIcon from '@material-ui/icons/Clear';
-import { ListItem } from '@material-ui/core/List';
+import Typography from 'material-ui/Typography';
+import Slide from 'material-ui/transitions/Slide';
+import IconButton from 'material-ui/IconButton';
+import ClearIcon from 'material-ui-icons/Clear';
+import { ListItem } from 'material-ui/List';
 import Router from 'next/router';
+
 import {
   StyledDivNavigationBar,
   StyledList,
@@ -22,7 +23,7 @@ import {
 class NavigationBar extends React.PureComponent {
   onMenuClick = route => () => Router.push(route);
   render() {
-    const { user, children } = this.props;
+    const { children } = this.props;
     return (
       <div>
         <StyledDivNavigationBar viewport={this.props.viewport}>
@@ -43,9 +44,7 @@ class NavigationBar extends React.PureComponent {
                   >
                     <Grid item>
                       <Typography variant="title">
-                        <p>
-                          {user.name.first} {user.name.last}
-                        </p>
+                        <p>Jane Doe</p>
                       </Typography>
                     </Grid>
                     <GridCloseIcon item>

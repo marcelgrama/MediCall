@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import IconButton from 'material-ui/IconButton';
+import CloseIcon from 'material-ui-icons/Close';
 import { removeGeneralError } from '../../actions/error';
+
 import { StyledSnackBar } from './style';
 
 class Snackbars extends Component {
@@ -43,8 +44,7 @@ class Snackbars extends Component {
 
 Snackbars.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  error: PropTypes.string.isRequired,
-  success: PropTypes.string.isRequired
+  error: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({

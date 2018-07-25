@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Snackbar from '@material-ui/core/Snackbar';
+import Snackbar from 'material-ui/Snackbar';
 import theme from '../Page/theme';
 
 export const StyledSnackBar = styled(Snackbar)`

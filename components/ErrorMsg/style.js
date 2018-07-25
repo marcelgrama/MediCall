@@ -1,6 +1,6 @@
-import ErrorIcon from '@material-ui/icons/Error';
+import ErrorIcon from 'material-ui-icons/Error';
 import styled from 'styled-components';
-import Grid from '@material-ui/core/Grid';
+import Grid from 'material-ui/Grid';
 
 export const StyledErrorIcon = styled(ErrorIcon)`
   display: block !important;
