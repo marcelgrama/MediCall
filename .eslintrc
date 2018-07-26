@@ -5,8 +5,16 @@
     "node": true,
     "es6": true
   },
-  "extends": ["airbnb", "prettier", "prettier/react", "plugin:import/warnings"],
-  "plugins": ["prettier", "import"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "prettier",
+    "import"
+  ],
   "globals": {
     "document": true,
     "window": true,
@@ -18,7 +26,12 @@
     "react/jsx-filename-extension": 0,
     "react/react-in-jsx-scope": 0,
     "class-methods-use-this": 0,
-    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
     "no-underscore-dangle": [
       "error",
       {

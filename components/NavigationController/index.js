@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Hidden from 'material-ui/Hidden';
+import Hidden from '@material-ui/core/Hidden';
 import AppBar from '../AppBar';
 import Navigationbar from '../NavigationBar';
 import { ListItems } from '../../components/NavigationBar/Items';
@@ -23,7 +23,7 @@ class NavigationController extends React.PureComponent {
         <Hidden smDown>
           <AppBar
             onMenuClick={this.handleChange}
-            title="Desktop Version"
+            title={this.props.title}
             showMenu={this.state.showStatus}
             viewport="desktop"
           />
@@ -39,7 +39,7 @@ class NavigationController extends React.PureComponent {
         <Hidden mdUp>
           <AppBar
             onMenuClick={this.handleChange}
-            title="Mobile Version"
+            title={this.props.title}
             showMenu={this.state.showStatus}
             viewport="mobile"
           />
@@ -59,7 +59,8 @@ class NavigationController extends React.PureComponent {
 
 NavigationController.propTypes = {
   children: PropTypes.node.isRequired,
-  showNav: PropTypes.bool
+  showNav: PropTypes.bool,
+  title: PropTypes.string.isRequired
 };
 
 NavigationController.defaultProps = {

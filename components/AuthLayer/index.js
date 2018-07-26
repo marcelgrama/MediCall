@@ -16,7 +16,7 @@ class AuthLayer extends React.Component {
 
   componentWillMount() {
     this.checkPermission().then(hasPermission => {
-      if (true) {
+      if (hasPermission) {
         return this.setState({ hasPermission: true });
       }
       return Router.push(`/signin?redirect=${encodeURI(Router.router.asPath)}`);

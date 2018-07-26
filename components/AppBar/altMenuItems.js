@@ -1,4 +1,4 @@
-import LogOutIcon from 'material-ui-icons/PowerSettingsNew';
+import LogOutIcon from '@material-ui/icons/PowerSettingsNew';
 
 export default [
   {

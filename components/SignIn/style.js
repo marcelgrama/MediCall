@@ -1,5 +1,5 @@
-import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import styled from 'styled-components';
 
 export const OutterGrid = styled(Grid)`

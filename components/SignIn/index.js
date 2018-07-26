@@ -1,14 +1,14 @@
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Router from 'next/router';
 import { connect } from 'react-redux';
 import React from 'react';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
-import Grow from 'material-ui/transitions/Grow';
-import { LinearProgress } from 'material-ui/Progress';
-import Logo from '../Logo/';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Grow from '@material-ui/core/Grow';
+import LinearProgress from '@material-ui/core/LinearProgress';
+
 import fetch from '../../services/fetch';
 import { setAuthToken } from '../../services/sessionStore';
 import ErrorMsg from '../ErrorMsg';
@@ -82,9 +82,7 @@ const SignIn = class extends React.Component {
           <InnerGrid container direction="column" spacing={16}>
             <Grid item>
               <Link href="/">
-                <StyledLink>
-                  <Logo />
-                </StyledLink>
+                <StyledLink>a</StyledLink>
               </Link>
             </Grid>
             <Grid item>
@@ -134,16 +132,15 @@ const SignIn = class extends React.Component {
 
 SignIn.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  loading: PropTypes.bool,
+  loading: PropTypes.bool.isRequired,
   redirectUrl: PropTypes.string
 };
 SignIn.defaultProps = {
-  redirectUrl: '',
-  loading: false
+  redirectUrl: ''
 };
 
 const mapStateToProps = state => ({
-  loading: state.Loading
+  loading: state.Loading[authSignin]
 });
 
 export default connect(mapStateToProps)(SignIn);
