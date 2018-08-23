@@ -5,5 +5,6 @@ env.restrictToServer();
 
 export default {
   ...clientConfig,
+  secretKey: 'M3dicall!',
   dbURL: process.env.MONGODB_URI
 };
