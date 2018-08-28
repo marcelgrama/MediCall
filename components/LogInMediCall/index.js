@@ -1,6 +1,6 @@
+import Router from 'next/router';
 import { connect } from 'react-redux';
 import React from 'react';
-import Router from 'next/router';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -46,6 +46,9 @@ class LogInMediCall extends React.Component {
     }
   };
 
+  handlePageChange = () => {
+    Router.push('/signupp');
+  };
   signIn = () => {
     const validationResult = signInSchema.validate(this.formData);
     if (validationResult.error) {
@@ -94,13 +97,13 @@ class LogInMediCall extends React.Component {
           position="center"
           color="primary"
         >
-          Log In to continue to MediCall
+          Autentificare MediCall
         </TypographyStyle>
         <Grid container spacing={24}>
           <Grid item xs={12}>
             <FormControlStyled aria-describedby="weight-helper-text">
               <InputLabel htmlFor="adornment-e-mail">
-                E-mail/Phone number
+                E-mail/Număr de telefon
               </InputLabel>
               <Input
                 name="username"
@@ -112,7 +115,7 @@ class LogInMediCall extends React.Component {
           </Grid>
           <Grid item xs={12}>
             <FormControl>
-              <InputLabel htmlFor="adornment-password">Password</InputLabel>
+              <InputLabel htmlFor="adornment-password">Parolă</InputLabel>
               <Input
                 id="adornment-password"
                 type={this.state.showPassword ? 'text' : 'password'}
@@ -148,13 +151,14 @@ class LogInMediCall extends React.Component {
           </Grow>
         ) : null}
         <ButtonStyle variant="outlined" color="primary" onClick={this.signIn}>
-          Log In
+          Autentificare
         </ButtonStyle>
         <Typography variant="subheading" gutterBottom>
-          New to MediCall?
+          Nu ai cont?
         </Typography>
-        <ButtonStyle2 variant="contained">
-          Create your MediCall account
+
+        <ButtonStyle2 variant="contained" onClick={this.handlePageChange}>
+          Creează-ți propriul cont MediCall
         </ButtonStyle2>
       </div>
     );
