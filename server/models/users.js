@@ -4,14 +4,20 @@ mongoose.Promise = require('bluebird');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-  username: String,
-  password: String
+  Nume: String,
+  Prenume: String,
+  Email: String,
+  Telefon: String,
+  Clinica: String,
+  Parola: String,
+  'Cod special': String,
+  Specializare: String
 });
 
 userSchema.index({ employeeID: 1 });
 
 userSchema.statics.findOne = function findOne(dataUsername, dataPassword) {
-  return this.find({ username: dataUsername, password: dataPassword }).exec();
+  return this.find({ Email: dataUsername, Parola: dataPassword }).exec();
 };
 
 userSchema.statics.upsertByEmployeeID = function upsertByEmployeeID(

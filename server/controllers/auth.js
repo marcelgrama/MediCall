@@ -8,14 +8,16 @@ import { genAuthToken, authRequired } from '../../services/authToken';
 import {
   signInSchema,
   validate,
-  signUpSchema
+  signUpSchema,
+  signUpDoctor
 } from '../../services/validation';
 
 const router = new express.Router();
 
 router.post('/signin', validate(signInSchema), (req, res) => {
-  const { username, password } = req.body;
-  User.findOne(username, password)
+  console.log(req.body);
+  const { Email, password } = req.body;
+  User.findOne(Email, password)
 
     .then(response => {
       if (_.isEmpty(response)) {
@@ -39,10 +41,39 @@ router.post(
   validate(signUpSchema),
 
   (req, res) => {
+    console.log(req.body);
     const userData = {
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
+      Nume: req.body.Nume,
+      Prenume: req.body.Prenume,
+      Email: req.body.Email,
+      Telefon: req.body.Telefon,
+      Clinica: req.body.Clinica,
+      Parola: req.body.Parola
+    };
+    User.create(userData)
+      .then(() => res.send({ success: true }))
+      .catch(error => {
+        res.send({ error: error.message });
+        logger.error(error.message);
+      });
+  }
+);
+
+router.post(
+  '/signupdoctor',
+  validate(signUpDoctor),
+
+  (req, res) => {
+    console.log(req.body);
+    const userData = {
+      Nume: req.body.Nume,
+      Prenume: req.body.Prenume,
+      Email: req.body.Email,
+      Telefon: req.body.Telefon,
+      Clinica: req.body.Clinica,
+      Specializare: req.body.Specializare,
+      CodSpecial: req.body.CodSpecial,
+      Parola: req.body.Parola
     };
     User.create(userData)
       .then(() => res.send({ success: true }))

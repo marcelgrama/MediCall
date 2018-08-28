@@ -106,8 +106,8 @@ class LogInMediCall extends React.Component {
                 E-mail/Număr de telefon
               </InputLabel>
               <Input
-                name="username"
-                label="Username"
+                name="Email"
+                label="Email"
                 onChange={this.onInputChange}
                 onKeyPress={this.onKeyPress}
               />
