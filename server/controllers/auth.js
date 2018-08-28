@@ -19,7 +19,7 @@ router.post('/signin', validate(signInSchema), (req, res) => {
 
     .then(response => {
       if (_.isEmpty(response)) {
-        throw new Error('Wrong username or password');
+        throw new Error('E-mail sau parolă greșită');
       }
     })
     .then(upsertData => {
