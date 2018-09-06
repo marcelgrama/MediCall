@@ -41,7 +41,7 @@ class Pacient extends React.Component {
               </Link>
               <Divider />
               <Link href="../../pacient/analize">
-                <MenuItem>
+                <MenuItem selected>
                   <Description />
                   <ListItemText inset primary="Analize" />
                 </MenuItem>
