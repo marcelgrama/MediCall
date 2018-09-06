@@ -32,4 +32,5 @@ export const RightGrid = styled(Grid)`
 
 export const ButtonStyle = styled(Button)`
   margin-left: 100px !important;
+  text-transform: none !important;
 `;

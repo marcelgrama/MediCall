@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import 'moment/locale/ro';
+import moment from 'moment';
 import MenuItem from '@material-ui/core/MenuItem';
 import Typography from '@material-ui/core/Typography';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -9,15 +11,53 @@ import Grid from '@material-ui/core/Grid';
 import Link from 'next/link';
 import Divider from '@material-ui/core/Divider';
 import Home from '@material-ui/icons/Home';
-import Message from '@material-ui/icons/Message';
 import List from '@material-ui/icons/List';
-import Description from '@material-ui/icons/Description';
-import { MenuListStyle, LeftGrid, RightGrid } from './style';
+import { MenuListStyle, LeftGrid, RightGrid, SCalendar } from './style';
+import SimplePopover from './event';
 
+SCalendar.setLocalizer(SCalendar.momentLocalizer(moment));
+const messages = {
+  allDay: 'Toata ziua',
+  previous: '<',
+  next: '>',
+  today: 'azi',
+  month: 'Luna',
+  week: 'Saptamana',
+  day: 'Ziua',
+  agenda: 'Agenda',
+  date: 'Data',
+  time: 'Intervalul de timp',
+  event: 'Evenimentul'
+};
+moment().locale('ro');
 class Pacient extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      events: [
+        {
+          s: moment(new Date(2018, 8, 10, 18, 30)).format('LLL'),
+          start: new Date(2018, 8, 10, 18, 30),
+          end: new Date(2018, 8, 10, 19, 30),
+          title: 'Programare la dentist'
+        },
+        {
+          s: moment(new Date(2018, 8, 10, 14, 30)).format('LLL'),
+          start: new Date(2018, 8, 10, 14, 30),
+          end: new Date(2018, 8, 10, 16, 30),
+          title: 'Programare la cardiolog'
+        },
+        {
+          s: moment(new Date(2018, 8, 14, 14, 30)).format('LLL'),
+          start: new Date(2018, 8, 14, 14, 30),
+          end: new Date(2018, 8, 14, 16, 30),
+          title: 'Programare la diabetolog'
+        }
+      ]
+    };
+    window.onload = function() {
+      alert('hhh');
+    };
   }
 
   render() {
@@ -34,23 +74,9 @@ class Pacient extends React.Component {
           <LeftGrid>
             <MenuListStyle>
               <Link href="../../pacient">
-                <MenuItem>
+                <MenuItem selected>
                   <Home />
                   <ListItemText inset primary="Home" />
-                </MenuItem>
-              </Link>
-              <Divider />
-              <Link href="../../pacient/analize">
-                <MenuItem>
-                  <Description />
-                  <ListItemText inset primary="Analize " />
-                </MenuItem>
-              </Link>
-              <Divider />
-              <Link href="../../pacient/notificari">
-                <MenuItem>
-                  <Message />
-                  <ListItemText inset primary="Notificari" />
                 </MenuItem>
               </Link>
               <Divider />
@@ -62,7 +88,18 @@ class Pacient extends React.Component {
               </Link>
             </MenuListStyle>
           </LeftGrid>
-          <RightGrid />
+          <RightGrid>
+            <SCalendar
+              messages={messages}
+              defaultDate={new Date()}
+              defaultView="month"
+              events={this.state.events}
+              style={{ height: '100vh' }}
+              components={{
+                event: SimplePopover
+              }}
+            />
+          </RightGrid>
         </Grid>
       </div>
     );

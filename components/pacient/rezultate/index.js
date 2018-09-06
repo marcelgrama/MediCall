@@ -9,9 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from 'next/link';
 import Divider from '@material-ui/core/Divider';
 import Home from '@material-ui/icons/Home';
-import Message from '@material-ui/icons/Message';
 import List from '@material-ui/icons/List';
-import Description from '@material-ui/icons/Description';
 import {
   MenuListStyle,
   LeftGrid,
@@ -46,22 +44,8 @@ class Pacient extends React.Component {
                 </MenuItem>
               </Link>
               <Divider />
-              <Link href="../../pacient/analize">
-                <MenuItem>
-                  <Description />
-                  <ListItemText inset primary="Analize" />
-                </MenuItem>
-              </Link>
-              <Divider />
-              <Link href="../../pacient/notificari">
-                <MenuItem>
-                  <Message />
-                  <ListItemText inset primary="Notificari" />
-                </MenuItem>
-              </Link>
-              <Divider />
               <Link href="../../pacient/rezultate">
-                <MenuItem>
+                <MenuItem selected>
                   <List />
                   <ListItemText inset primary="Rezultate" />
                 </MenuItem>
@@ -69,13 +53,18 @@ class Pacient extends React.Component {
             </MenuListStyle>
           </LeftGrid>
           <RightGrid>
-            <Typography>Ultimele analize:</Typography>
+            <Typography>Ultimele analize incarcate:</Typography>
             <ol>
               <li>
                 <Typography>
                   Data: 16.08.2018
-                  <ButtonStyle variant="contained" color="default">
-                    Descarca
+                  <ButtonStyle
+                    variant="contained"
+                    color="default"
+                    href="../../pacient/rezultate/analiza.pdf"
+                    target="_blank"
+                  >
+                    Deschide
                     <CloudDownloadStyled />
                   </ButtonStyle>{' '}
                 </Typography>
