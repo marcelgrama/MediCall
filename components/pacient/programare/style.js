@@ -1,7 +1,26 @@
 import MenuList from '@material-ui/core/MenuList';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
+import { TextField, Select, Button } from '@material-ui/core';
 
+export const StyledTextField = styled(TextField)`
+  width: 150px !important;
+  padding: 50px;
+`;
+export const STextField = styled(TextField)`
+  padding: 5px !important;
+`;
+export const Password = styled(TextField)`
+  width: 150px !important;
+  padding: 50px;
+`;
+export const StyledSelect = styled(Select)`
+  width: 150px !important;
+`;
+export const StyledButton = styled(Button)`
+  width: 150px !important;
+  margin-top: 50px !important;
+`;
 export const MenuListStyle = styled(MenuList)`
   background-clip: content-box;
   height: 530px;

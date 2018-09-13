@@ -12,7 +12,13 @@ import Link from 'next/link';
 import Divider from '@material-ui/core/Divider';
 import Home from '@material-ui/icons/Home';
 import List from '@material-ui/icons/List';
-import { MenuListStyle, LeftGrid, RightGrid, SCalendar } from './style';
+import {
+  MenuListStyle,
+  LeftGrid,
+  RightGrid,
+  SCalendar,
+  ButtonStyle
+} from './style';
 import SimplePopover from './event';
 
 SCalendar.setLocalizer(SCalendar.momentLocalizer(moment));
@@ -56,7 +62,7 @@ class Pacient extends React.Component {
       ]
     };
     window.onload = function() {
-      alert('hhh');
+      alert('Urmatoare programare: 20 Septembrie 2018 17:30');
     };
   }
 
@@ -89,12 +95,17 @@ class Pacient extends React.Component {
             </MenuListStyle>
           </LeftGrid>
           <RightGrid>
+            <Link href="../../pacient/programare">
+              <ButtonStyle variant="contained" color="default">
+                Adauga o programare
+              </ButtonStyle>
+            </Link>
             <SCalendar
               messages={messages}
               defaultDate={new Date()}
               defaultView="month"
               events={this.state.events}
-              style={{ height: '100vh' }}
+              style={{ height: '26em' }}
               components={{
                 event: SimplePopover
               }}
