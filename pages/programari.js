@@ -1,16 +1,16 @@
 import React from 'react';
 import connectPage from '../store/connectPage';
 import Page from '../components/Page/';
-import Pacienti from '../components/Doctor/Pacienti/';
+import Programari from '../components/Doctor/programari/';
 
-class PacientiPage extends React.Component {
+class ProgramariPage extends React.Component {
   render() {
     return (
       <Page>
-        <Pacienti />
+        <Programari />
       </Page>
     );
   }
 }
 
-export default connectPage()(PacientiPage);
+export default connectPage()(ProgramariPage);

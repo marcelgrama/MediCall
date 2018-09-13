@@ -9,8 +9,20 @@ import TableBody from '@material-ui/core/TableBody';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import { TitleTypography } from './style';
-import { HeadTypography } from './style';
+import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Link from 'next/link';
+import Divider from '@material-ui/core/Divider';
+import Home from '@material-ui/icons/Home';
+import List from '@material-ui/icons/List';
+import {
+  TitleTypography,
+  HeadTypography,
+  LeftGrid,
+  MenuListStyle,
+  RightGrid
+} from './style';
 
 class Pacienti extends React.Component {
   constructor(props) {
@@ -30,7 +42,31 @@ class Pacienti extends React.Component {
           </Toolbar>
         </AppBar>
         <Grid container spacing={24}>
-          <Grid xs={12} sm={6}>
+          <LeftGrid>
+            <MenuListStyle>
+              <Link href="../../doctor">
+                <MenuItem selected>
+                  <Home />
+                  <ListItemText inset primary="Home" />
+                </MenuItem>
+              </Link>
+              <Divider />
+              <Link href="../../pacienti">
+                <MenuItem>
+                  <List />
+                  <ListItemText inset primary="Pacienti" />
+                </MenuItem>
+              </Link>
+              <Divider />
+              <Link href="../../programari">
+                <MenuItem>
+                  <List />
+                  <ListItemText inset primary="Programari noi" />
+                </MenuItem>
+              </Link>
+            </MenuListStyle>
+          </LeftGrid>
+          <RightGrid>
             <TitleTypography variant="display1">Pacienti</TitleTypography>
             <Table>
               <TableHead>
@@ -59,23 +95,24 @@ class Pacienti extends React.Component {
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell> Nume </TableCell>
+                  <TableCell>
+                    <Button>Nume</Button>
+                  </TableCell>
                   <TableCell> Prenume </TableCell>
                   <TableCell> Varsta </TableCell>
                   <TableCell> Diagnostic </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell> Nume </TableCell>
+                  <TableCell>
+                    <Button>Nume</Button>
+                  </TableCell>
                   <TableCell> Prenume </TableCell>
                   <TableCell> Varsta </TableCell>
                   <TableCell> Diagnostic </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
-          </Grid>
-          <Grid xs={12} sm={6}>
-            {' '}
-          </Grid>
+          </RightGrid>
         </Grid>
       </div>
     );

@@ -38,7 +38,7 @@ const Page = class extends React.Component {
         <AuthLayer authRequired={authRequired}>
           <MuiThemeProvider theme={theme}>
             <Head>
-              <title>CirclePoll</title>
+              <title>MediCall</title>
             </Head>
             <CssBaseline />
             <NavigationController
