@@ -3,14 +3,21 @@ import MenuList from '@material-ui/core/MenuList';
 import Calendar from 'react-big-calendar';
 import Grid from '@material-ui/core/Grid';
 import Chip from '@material-ui/core/Chip';
+import Button from '@material-ui/core/Button';
 
 export const StyledChip = styled(Chip)`
   background-color: inherit !important;
+  height: 25px !important;
 `;
 export const MenuListStyle = styled(MenuList)`
   background-clip: content-box;
   height: 530px;
   width: 180px;
+`;
+export const ButtonStyle = styled(Button)`
+  margin-left: 0px !important;
+  margin-bottom: 10px !important;
+  text-transform: none !important;
 `;
 export const LeftGrid = styled(Grid)`
   padding: 1em;
@@ -234,9 +241,6 @@ export const SCalendar = styled(Calendar)`
     cursor: inherit;
     pointer-events: none;
   }
-  .rbc-event.rbc-selected {
-    background-color: #265985;
-  }
   .rbc-event-label {
     font-size: 80%;
   }
@@ -307,7 +311,7 @@ export const SCalendar = styled(Calendar)`
     -ms-user-select: none;
     user-select: none;
     -webkit-user-select: none;
-    height: 70%;
+    height: 100%;
   }
   .rbc-month-header {
     display: -webkit-flex;
@@ -503,7 +507,6 @@ export const SCalendar = styled(Calendar)`
     right: 0;
   }
   .rbc-day-slot .rbc-event {
-    border: 1px solid #265985;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
